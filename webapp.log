@@ -1,1 +1,2 @@
 2021/06/07 15:01:29 main.go:15: test
+2021/06/07 17:00:31 base.go:20: sql: unknown driver "sqlite3" (forgotten import?)
