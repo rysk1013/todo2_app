@@ -40,7 +40,7 @@ func init() {
 	// todoTable
 	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		context TEXT,
+		content TEXT,
 		user_id INTEGER,
 		created_at DATETIME)`, tableNameTodo)
 	Db.Exec(cmdT)
