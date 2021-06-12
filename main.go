@@ -12,13 +12,4 @@ func main() {
 	fmt.Println(models.Db)
 	
 	// controllers.StartMainServer()
-
-	user, _ := models.GetUserByEmail("test@example.com")
-	fmt.Println(user)
-
-	session, err := user.CreateSession()
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(session)
 }
