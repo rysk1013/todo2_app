@@ -18,6 +18,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Redirect(w, r, "/", 302)
 	} else {
-		generateHTML(w, nil, "layout", "public_navbar", "index")
+		generateHTML(w, nil, "layout", "private_navbar", "index")
 	}
 }
