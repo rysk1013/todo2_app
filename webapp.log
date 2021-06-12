@@ -2,3 +2,817 @@
 2021/06/07 17:00:31 base.go:20: sql: unknown driver "sqlite3" (forgotten import?)
 2021/06/08 04:29:39 todos.go:23: table todos has no column named content
 2021/06/10 02:43:26 todos.go:102: near "=": syntax error
+2021/06/13 06:11:36 server.go:3139: http: panic serving [::1]:51116: template: index.html:1: unexpected "content" in define clause
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000b9360)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018e290)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001982a0, 0x0, 0x0, 0xc0000bdaa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001982a0, 0xc000194100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001982a0, 0xc000194100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001982a0, 0xc000194100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0001982a0, 0xc000194100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b9360, 0x45a5dc0, 0xc00018c000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:36 server.go:3139: http: panic serving [::1]:51117: template: index.html:1: unexpected "content" in define clause
+goroutine 21 [running]:
+net/http.(*conn).serve.func1(0xc0000b9400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000099110)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198460, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198460, 0xc0000ce100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198460, 0xc0000ce100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198460, 0xc0000ce100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198460, 0xc0000ce100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b9400, 0x45a5dc0, 0xc0000d24c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:36 server.go:3139: http: panic serving [::1]:51118: template: index.html:1: unexpected "content" in define clause
+goroutine 5 [running]:
+net/http.(*conn).serve.func1(0xc00007a000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000012200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0002020e0, 0x0, 0x0, 0xc000215aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0002020e0, 0xc00007e000)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0002020e0, 0xc00007e000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0002020e0, 0xc00007e000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0002020e0, 0xc00007e000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00007a000, 0x45a5dc0, 0xc000024080)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:38 server.go:3139: http: panic serving [::1]:51119: template: index.html:1: unexpected "content" in define clause
+goroutine 41 [running]:
+net/http.(*conn).serve.func1(0xc000290000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0000991b0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198540, 0x0, 0x0, 0xc0000bdaa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198540, 0xc000194200)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198540, 0xc000194200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198540, 0xc000194200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198540, 0xc000194200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290000, 0x45a5dc0, 0xc00018c680)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:43 server.go:3139: http: panic serving [::1]:51120: template: index.html:1: unexpected "content" in define clause
+goroutine 45 [running]:
+net/http.(*conn).serve.func1(0xc0002900a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018e5c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001120e0, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001120e0, 0xc000194300)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001120e0, 0xc000194300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001120e0, 0xc000194300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0001120e0, 0xc000194300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002900a0, 0x45a5dc0, 0xc00018c9c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:43 server.go:3139: http: panic serving [::1]:51121: template: index.html:1: unexpected "content" in define clause
+goroutine 46 [running]:
+net/http.(*conn).serve.func1(0xc000290140)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031c1d0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000320000, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000320000, 0xc000194400)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000320000, 0xc000194400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000320000, 0xc000194400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000320000, 0xc000194400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290140, 0x45a5dc0, 0xc00018ca40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:43 server.go:3139: http: panic serving [::1]:51122: template: index.html:1: unexpected "content" in define clause
+goroutine 54 [running]:
+net/http.(*conn).serve.func1(0xc000344000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031c3c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0003200e0, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0003200e0, 0xc000346000)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0003200e0, 0xc000346000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0003200e0, 0xc000346000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0003200e0, 0xc000346000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000344000, 0x45a5dc0, 0xc000318380)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:49 server.go:3139: http: panic serving [::1]:51125: template: index.html:1: unexpected "content" in define clause
+goroutine 48 [running]:
+net/http.(*conn).serve.func1(0xc0002901e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031c660)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000320460, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000320460, 0xc000346200)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000320460, 0xc000346200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000320460, 0xc000346200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000320460, 0xc000346200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002901e0, 0x45a5dc0, 0xc00018cb80)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:49 server.go:3139: http: panic serving [::1]:51126: template: index.html:1: unexpected "content" in define clause
+goroutine 59 [running]:
+net/http.(*conn).serve.func1(0xc0003440a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018e7e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198700, 0x0, 0x0, 0xc0000bdaa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198700, 0xc000346100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198700, 0xc000346100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198700, 0xc000346100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198700, 0xc000346100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0003440a0, 0x45a5dc0, 0xc000318780)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:49 server.go:3139: http: panic serving [::1]:51127: template: index.html:1: unexpected "content" in define clause
+goroutine 65 [running]:
+net/http.(*conn).serve.func1(0xc000344140)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031c850)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000320620, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000320620, 0xc000346300)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000320620, 0xc000346300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000320620, 0xc000346300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000320620, 0xc000346300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000344140, 0x45a5dc0, 0xc000318bc0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:50 server.go:3139: http: panic serving [::1]:51128: template: index.html:1: unexpected "content" in define clause
+goroutine 69 [running]:
+net/http.(*conn).serve.func1(0xc000290280)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0000993f0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000320700, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000320700, 0xc000346400)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000320700, 0xc000346400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000320700, 0xc000346400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000320700, 0xc000346400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290280, 0x45a5dc0, 0xc000318fc0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:50 server.go:3139: http: panic serving [::1]:51129: template: index.html:1: unexpected "content" in define clause
+goroutine 70 [running]:
+net/http.(*conn).serve.func1(0xc000290320)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031cb50)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0003207e0, 0x0, 0x0, 0xc000213aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0003207e0, 0xc000194700)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0003207e0, 0xc000194700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0003207e0, 0xc000194700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0003207e0, 0xc000194700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290320, 0x45a5dc0, 0xc00018cf80)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:50 server.go:3139: http: panic serving [::1]:51130: template: index.html:1: unexpected "content" in define clause
+goroutine 71 [running]:
+net/http.(*conn).serve.func1(0xc0002903c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018ea10)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001987e0, 0x0, 0x0, 0xc000211aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001987e0, 0xc000194800)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001987e0, 0xc000194800)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001987e0, 0xc000194800)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0001987e0, 0xc000194800)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002903c0, 0x45a5dc0, 0xc00018d040)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:53 server.go:3139: http: panic serving [::1]:51132: template: index.html:1: unexpected "content" in define clause
+goroutine 30 [running]:
+net/http.(*conn).serve.func1(0xc0000b94a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031cbe0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000112460, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000112460, 0xc0000ce300)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000112460, 0xc0000ce300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000112460, 0xc0000ce300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000112460, 0xc0000ce300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b94a0, 0x45a5dc0, 0xc000319580)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:53 server.go:3139: http: panic serving [::1]:51133: template: index.html:1: unexpected "content" in define clause
+goroutine 31 [running]:
+net/http.(*conn).serve.func1(0xc0000b9540)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031cdd0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0003209a0, 0x0, 0x0, 0xc000213aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0003209a0, 0xc0000ce200)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0003209a0, 0xc0000ce200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0003209a0, 0xc0000ce200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0003209a0, 0xc0000ce200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b9540, 0x45a5dc0, 0xc0000d2c40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:53 server.go:3139: http: panic serving [::1]:51134: template: index.html:1: unexpected "content" in define clause
+goroutine 77 [running]:
+net/http.(*conn).serve.func1(0xc000290460)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018ec40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001989a0, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001989a0, 0xc000194900)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001989a0, 0xc000194900)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001989a0, 0xc000194900)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0001989a0, 0xc000194900)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290460, 0x45a5dc0, 0xc00018d5c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:54 server.go:3139: http: panic serving [::1]:51135: template: index.html:1: unexpected "content" in define clause
+goroutine 114 [running]:
+net/http.(*conn).serve.func1(0xc000290500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00031cfd0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000320a80, 0x0, 0x0, 0xc000213aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000320a80, 0xc000346600)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000320a80, 0xc000346600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000320a80, 0xc000346600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000320a80, 0xc000346600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290500, 0x45a5dc0, 0xc000319a40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:54 server.go:3139: http: panic serving [::1]:51136: template: index.html:1: unexpected "content" in define clause
+goroutine 115 [running]:
+net/http.(*conn).serve.func1(0xc0002905a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018ee40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198a80, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198a80, 0xc000194a00)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198a80, 0xc000194a00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198a80, 0xc000194a00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198a80, 0xc000194a00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002905a0, 0x45a5dc0, 0xc00018d9c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:54 server.go:3139: http: panic serving [::1]:51137: template: index.html:1: unexpected "content" in define clause
+goroutine 99 [running]:
+net/http.(*conn).serve.func1(0xc0000b95e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0000997f0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000112540, 0x0, 0x0, 0xc000179aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000112540, 0xc0000ce400)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000112540, 0xc0000ce400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000112540, 0xc0000ce400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000112540, 0xc0000ce400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b95e0, 0x45a5dc0, 0xc0000d2e40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:59 server.go:3139: http: panic serving [::1]:51140: template: index.html:1: unexpected "content" in define clause
+goroutine 104 [running]:
+net/http.(*conn).serve.func1(0xc0000b9680)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0000998f0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198b60, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198b60, 0xc000194b00)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198b60, 0xc000194b00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198b60, 0xc000194b00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198b60, 0xc000194b00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b9680, 0x45a5dc0, 0xc00018ddc0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:59 server.go:3139: http: panic serving [::1]:51141: template: index.html:1: unexpected "content" in define clause
+goroutine 105 [running]:
+net/http.(*conn).serve.func1(0xc0000b9720)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000099ae0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000112620, 0x0, 0x0, 0xc000179aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000112620, 0xc0000ce500)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000112620, 0xc0000ce500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000112620, 0xc0000ce500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000112620, 0xc0000ce500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b9720, 0x45a5dc0, 0xc0000d3240)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:11:59 server.go:3139: http: panic serving [::1]:51142: template: index.html:1: unexpected "content" in define clause
+goroutine 112 [running]:
+net/http.(*conn).serve.func1(0xc0000b97c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000099ce0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000112700, 0x0, 0x0, 0xc000179aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000112700, 0xc0000ce600)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000112700, 0xc0000ce600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000112700, 0xc0000ce600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000112700, 0xc0000ce600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000b97c0, 0x45a5dc0, 0xc0000d3800)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:12:29 server.go:3139: http: panic serving [::1]:51143: template: index.html:1: unexpected "content" in define clause
+goroutine 122 [running]:
+net/http.(*conn).serve.func1(0xc000290640)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018f140)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198c40, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198c40, 0xc0000ce700)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198c40, 0xc0000ce700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198c40, 0xc0000ce700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198c40, 0xc0000ce700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290640, 0x45a5dc0, 0xc0000d3c00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:12:29 server.go:3139: http: panic serving [::1]:51144: template: index.html:1: unexpected "content" in define clause
+goroutine 123 [running]:
+net/http.(*conn).serve.func1(0xc0002906e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc00018f210)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001127e0, 0x0, 0x0, 0xc000179aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001127e0, 0xc000194c00)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001127e0, 0xc000194c00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001127e0, 0xc000194c00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc0001127e0, 0xc000194c00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002906e0, 0x45a5dc0, 0xc0002fa000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:12:29 server.go:3139: http: panic serving [::1]:51145: template: index.html:1: unexpected "content" in define clause
+goroutine 162 [running]:
+net/http.(*conn).serve.func1(0xc000290780)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000099ef0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc000198d20, 0x0, 0x0, 0xc0000c3aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc000198d20, 0xc000194d00)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc000198d20, 0xc000194d00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc000198d20, 0xc000194d00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000112000, 0x45a5610, 0xc000198d20, 0xc000194d00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000290780, 0x45a5dc0, 0xc0002fa580)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:28 server.go:3139: http: panic serving [::1]:51155: template: index.html:1: unexpected "content" in define clause
+goroutine 7 [running]:
+net/http.(*conn).serve.func1(0xc00010f400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0001840e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0000a02a0, 0x0, 0x0, 0xc000111aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0000a02a0, 0xc00009c100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0000a02a0, 0xc00009c100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0000a02a0, 0xc00009c100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0000a02a0, 0xc00009c100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f400, 0x45a5dc0, 0xc000096000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:28 server.go:3139: http: panic serving [::1]:51156: template: index.html:1: unexpected "content" in define clause
+goroutine 8 [running]:
+net/http.(*conn).serve.func1(0xc00010f4a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0001842d0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001d00e0, 0x0, 0x0, 0xc000117aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001d00e0, 0xc000120100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001d00e0, 0xc000120100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001d00e0, 0xc000120100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0001d00e0, 0xc000120100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f4a0, 0x45a5dc0, 0xc000024540)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:28 server.go:3139: http: panic serving [::1]:51157: template: index.html:1: unexpected "content" in define clause
+goroutine 9 [running]:
+net/http.(*conn).serve.func1(0xc00010f540)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000098270)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc00015e1c0, 0x0, 0x0, 0xc000173aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc00015e1c0, 0xc000120200)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc00015e1c0, 0xc000120200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc00015e1c0, 0xc000120200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc00015e1c0, 0xc000120200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f540, 0x45a5dc0, 0xc000024600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:29 server.go:3139: http: panic serving [::1]:51158: template: index.html:1: unexpected "content" in define clause
+goroutine 12 [running]:
+net/http.(*conn).serve.func1(0xc00010f5e0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000013360)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc00015e2a0, 0x0, 0x0, 0xc000175aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc00015e2a0, 0xc00009c200)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc00015e2a0, 0xc00009c200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc00015e2a0, 0xc00009c200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc00015e2a0, 0xc00009c200)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f5e0, 0x45a5dc0, 0xc0000964c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:29 server.go:3139: http: panic serving [::1]:51159: template: index.html:1: unexpected "content" in define clause
+goroutine 13 [running]:
+net/http.(*conn).serve.func1(0xc00010f680)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0001843c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0000a0380, 0x0, 0x0, 0xc000173aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0000a0380, 0xc000120300)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0000a0380, 0xc000120300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0000a0380, 0xc000120300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0000a0380, 0xc000120300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f680, 0x45a5dc0, 0xc0000247c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:29 server.go:3139: http: panic serving [::1]:51160: template: index.html:1: unexpected "content" in define clause
+goroutine 42 [running]:
+net/http.(*conn).serve.func1(0xc0001f8000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000098470)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001d01c0, 0x0, 0x0, 0xc000173aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001d01c0, 0xc0001fa000)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001d01c0, 0xc0001fa000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001d01c0, 0xc0001fa000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0001d01c0, 0xc0001fa000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0001f8000, 0x45a5dc0, 0xc000186800)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:35 server.go:3139: http: panic serving [::1]:51162: template: index.html:1: unexpected "content" in define clause
+goroutine 27 [running]:
+net/http.(*conn).serve.func1(0xc0000f8000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000013560)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc00015e380, 0x0, 0x0, 0xc000175aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc00015e380, 0xc000120500)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc00015e380, 0xc000120500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc00015e380, 0xc000120500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc00015e380, 0xc000120500)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000f8000, 0x45a5dc0, 0xc000024c00)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:35 server.go:3139: http: panic serving [::1]:51163: template: index.html:1: unexpected "content" in define clause
+goroutine 28 [running]:
+net/http.(*conn).serve.func1(0xc0000f80a0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000098680)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0000a0460, 0x0, 0x0, 0xc000173aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0000a0460, 0xc00009c300)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0000a0460, 0xc00009c300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0000a0460, 0xc00009c300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0000a0460, 0xc00009c300)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000f80a0, 0x45a5dc0, 0xc000096840)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:13:35 server.go:3139: http: panic serving [::1]:51164: template: index.html:1: unexpected "content" in define clause
+goroutine 33 [running]:
+net/http.(*conn).serve.func1(0xc0000f8140)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000098880)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0000a0540, 0x0, 0x0, 0xc000173aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0000a0540, 0xc00009c400)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0000a0540, 0xc00009c400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0000a0540, 0xc00009c400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0000a0540, 0xc00009c400)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000f8140, 0x45a5dc0, 0xc000096c40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:14:05 server.go:3139: http: panic serving [::1]:51168: template: index.html:1: unexpected "content" in define clause
+goroutine 55 [running]:
+net/http.(*conn).serve.func1(0xc00010f720)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000013760)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc00015e460, 0x0, 0x0, 0xc000175aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc00015e460, 0xc0001fa100)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc00015e460, 0xc0001fa100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc00015e460, 0xc0001fa100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc00015e460, 0xc0001fa100)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f720, 0x45a5dc0, 0xc000186a40)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:14:05 server.go:3139: http: panic serving [::1]:51169: template: index.html:1: unexpected "content" in define clause
+goroutine 56 [running]:
+net/http.(*conn).serve.func1(0xc00010f7c0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc0001846d0)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc0001d02a0, 0x0, 0x0, 0xc000117aa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc0001d02a0, 0xc000120600)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc0001d02a0, 0xc000120600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc0001d02a0, 0xc000120600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc0001d02a0, 0xc000120600)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f7c0, 0x45a5dc0, 0xc000025000)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/13 06:14:05 server.go:3139: http: panic serving [::1]:51170: template: index.html:1: unexpected "content" in define clause
+goroutine 61 [running]:
+net/http.(*conn).serve.func1(0xc00010f860)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1824 +0x153
+panic(0x44bfda0, 0xc000098960)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/runtime/panic.go:971 +0x499
+html/template.Must(...)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/html/template/template.go:374
+todo2_app/app/controllers.generateHTML(0x45a5610, 0xc00015e540, 0x0, 0x0, 0xc00016faa8, 0x3, 0x3)
+	/Users/ryosuke/golang/todo2_app/app/controllers/server.go:16 +0x2ce
+todo2_app/app/controllers.index(0x45a5610, 0xc00015e540, 0xc000120700)
+	/Users/ryosuke/golang/todo2_app/app/controllers/route_main.go:21 +0x15d
+net/http.HandlerFunc.ServeHTTP(0x4548be0, 0x45a5610, 0xc00015e540, 0xc000120700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x47c5f00, 0x45a5610, 0xc00015e540, 0xc000120700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc00015e000, 0x45a5610, 0xc00015e540, 0xc000120700)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00010f860, 0x45a5dc0, 0xc000025380)
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
