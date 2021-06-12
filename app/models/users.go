@@ -23,12 +23,7 @@ type Session struct {
 }
 
 func (u *User) CreateUser() (err error) {
-	cmd := `INSERT INTO users (
-			uuid,
-			name,
-			email,
-			password,
-			created_at) values (?, ?, ?, ?, ?)`
+	cmd := `INSERT INTO users (uuid, name, email, password, created_at) 						VALUES (?, ?, ?, ?, ?)`
 
 	_, err = Db.Exec(cmd,
 		createUUID(),
@@ -105,4 +100,32 @@ func GetUserByEmail(email string) (user User, err error) {
 	)
 
 	return user, err
+}
+
+func (u *User) CreateSession() (session Session, err error) {
+	session = Session{}
+
+	// Create Session
+	cmd1 := `INSERT INTO sessions (uuid, email, user_id, created_at)
+					 VALUES (?, ?, ?, ?)`
+
+	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, time.Now())
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// Get Session
+	cmd2 := `SELECT id, uuid, email, user_id, created_at
+					 FROM sessions
+					 WHERE user_id = ? AND email = ?`
+
+	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
+		&session.ID,
+		&session.UUID,
+		&session.Email,
+		&session.UserID,
+		&session.CreatedAt,
+	)
+
+	return session, err
 }
