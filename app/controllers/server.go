@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"regexp"
+	"strconv"
 	"todo2_app/app/models"
 	"todo2_app/config"
 )
@@ -26,6 +28,27 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 		}
 	}
 	return sess, err
+}
+
+// Get ID from URL
+var validPath = regexp.MustCompile("^/todos/edit|update/[0-9]+")
+
+func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
+	return func (w http.ResponseWriter, r *http.Request)  {
+		// todos/edit/"id"
+		q := validPath.FindStringSubmatch(r.URL.Path)
+		if 	q == nil {
+			http.NotFound(w, r)
+			return
+		}
+
+		qi, err := strconv.Atoi(q[2])
+		if err != nil {
+			http.NotFound(w, r)
+			return
+		}
+		fn(w, r, qi)
+	}
 }
 
 func StartMainServer() error {
