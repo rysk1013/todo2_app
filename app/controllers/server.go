@@ -47,7 +47,7 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 			http.NotFound(w, r)
 			return
 		}
-		
+
 		fn(w, r, qi)
 	}
 }
@@ -65,5 +65,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/new", todoNew)
 	http.HandleFunc("/todos/save", todoSave)
 	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
+	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
