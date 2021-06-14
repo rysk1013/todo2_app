@@ -31,7 +31,7 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 }
 
 // Get ID from URL
-var validPath = regexp.MustCompile("^/todos/edit|update/[0-9]+")
+var validPath = regexp.MustCompile("^/todos/(edit|update)/([0-9]+)")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func (w http.ResponseWriter, r *http.Request)  {
@@ -47,6 +47,7 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 			http.NotFound(w, r)
 			return
 		}
+		
 		fn(w, r, qi)
 	}
 }
@@ -63,5 +64,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos", index)
 	http.HandleFunc("/todos/new", todoNew)
 	http.HandleFunc("/todos/save", todoSave)
+	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
