@@ -130,3 +130,17 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
+
+func userEdit(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		user, err := sess.GetUserBySession()
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		generateHTML(w, user, "layout", "private_navbar", "user_edit")
+	}
+}
