@@ -1,0 +1,15 @@
+{{define "content"}}
+{{.Name}}
+
+<form class="form-signin center" role="form" action="/users/update/{{.ID}}" method="post">
+  <h2 class="form-signin-heading">
+    <i class="fa fa-comments-o">
+      UserUpdate
+    </i>
+  </h2>
+  <div class="lead">登録</div>
+  <input id="name" type="text" name="name" class="form-control" placeholder="お名前" value="{{.Name}}" required autofocus>
+  <input type="email" name="email" class="form-control" placeholder="Email" value="{{.Email}}">
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+</form>
+{{end}}
