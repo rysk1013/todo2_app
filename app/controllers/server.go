@@ -30,7 +30,7 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 	return sess, err
 }
 
-// Get ID from URL
+// Get ID from URL(todos)
 var validPath = regexp.MustCompile("^/todos/(edit|update|delete)/([0-9]+)")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
@@ -38,6 +38,28 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 		// todos/edit/"id"
 		q := validPath.FindStringSubmatch(r.URL.Path)
 		if 	q == nil {
+			http.NotFound(w, r)
+			return
+		}
+
+		qi, err := strconv.Atoi(q[2])
+		if err != nil {
+			http.NotFound(w, r)
+			return
+		}
+
+		fn(w, r, qi)
+	}
+}
+
+// Get ID from URL(users)
+var validPath2 = regexp.MustCompile("^/users/(edit|update)/([0-9]+)")
+
+func parseURL2(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request)  {
+		// users/edit/"id"
+		q := validPath2.FindStringSubmatch(r.URL.Path)
+		if q == nil {
 			http.NotFound(w, r)
 			return
 		}
@@ -67,5 +89,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
+	http.HandleFunc("/users/edit/", parseURL2(userEdit))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
