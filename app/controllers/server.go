@@ -90,5 +90,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 	http.HandleFunc("/users/edit/", parseURL2(userEdit))
+	http.HandleFunc("/users/update/", parseURL2(userUpdate))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
