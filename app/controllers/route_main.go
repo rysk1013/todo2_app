@@ -144,3 +144,25 @@ func userEdit(w http.ResponseWriter, r *http.Request, id int) {
 		generateHTML(w, user, "layout", "private_navbar", "user_edit")
 	}
 }
+
+func userUpdate(w http.ResponseWriter, r *http.Request, id int) {
+	_, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		err := r.ParseForm()
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		name := r.PostFormValue("name")
+		email := r.PostFormValue("email")
+
+		user := &models.User{ID: id, Name: name, Email: email}
+		if err := user.UpdateUser(); err != nil {
+			log.Fatalln(err)
+		}
+
+		http.Redirect(w, r, "/todos", 302)
+	}
+}
