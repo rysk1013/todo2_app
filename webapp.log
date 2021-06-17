@@ -1105,3 +1105,10 @@ net/http.(*conn).serve(0xc0001ec320, 0x45a8d80, 0xc000188740)
 	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:1952 +0x8cd
 created by net/http.(*Server).Serve
 	/Users/ryosuke/.goenv/versions/1.16.4/src/net/http/server.go:3013 +0x39b
+2021/06/18 01:14:14 route_main.go:25: sql: no rows in result set
+2021/06/18 01:18:17 route_main.go:25: sql: no rows in result set
+2021/06/18 01:18:41 route_main.go:25: sql: no rows in result set
+2021/06/18 01:48:01 route_auth.go:50: sql: no rows in result set
+2021/06/18 01:49:56 server.go:3139: http: superfluous response.WriteHeader call from todo2_app/app/controllers.authenticate (route_auth.go:69)
+2021/06/18 01:53:57 server.go:3139: http: superfluous response.WriteHeader call from todo2_app/app/controllers.authenticate (route_auth.go:69)
+2021/06/18 01:59:46 server.go:3139: http: superfluous response.WriteHeader call from todo2_app/app/controllers.authenticate (route_auth.go:69)
