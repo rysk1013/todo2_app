@@ -53,7 +53,7 @@ func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc
 }
 
 // Get ID from URL(users)
-var validPath2 = regexp.MustCompile("^/users/(edit|update)/([0-9]+)")
+var validPath2 = regexp.MustCompile("^/users/(edit|update|delete)/([0-9]+)")
 
 func parseURL2(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request)  {
@@ -91,5 +91,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 	http.HandleFunc("/users/edit/", parseURL2(userEdit))
 	http.HandleFunc("/users/update/", parseURL2(userUpdate))
+	http.HandleFunc("/users/delete/", parseURL2(userDelete))
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
