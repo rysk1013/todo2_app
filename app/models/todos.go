@@ -114,3 +114,15 @@ func (t *Todo) DeleteTodo() (error) {
 	}
 	return err
 }
+
+func (u *User) DeleteTodos() (error) {
+	cmd := `DELETE FROM todos
+					WHERE user_id = ?`
+
+	_, err := Db.Exec(cmd, u.ID)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
