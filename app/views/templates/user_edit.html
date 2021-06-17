@@ -1,5 +1,5 @@
 {{define "content"}}
-{{.Name}}
+{{.Name}} [<a href="/users/delete/{{.ID}}">Delete</a>]
 
 <form class="form-signin center" role="form" action="/users/update/{{.ID}}" method="post">
   <h2 class="form-signin-heading">
