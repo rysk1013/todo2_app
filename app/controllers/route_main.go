@@ -163,6 +163,10 @@ func userUpdate(w http.ResponseWriter, r *http.Request, id int) {
 			log.Fatalln(err)
 		}
 
+		if err := user.UpdateSession(); err != nil {
+			log.Fatalln(err)
+		}
+
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
