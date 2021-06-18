@@ -165,6 +165,19 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 	return err 
 }
 
+func (u *User) UpdateSession() (err error) {
+	cmd := `UPDATE sessions
+					SET email = ?
+					WHERE user_id = ?`
+
+	_, err = Db.Exec(cmd, u.Email, u.ID)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
+
 func (sess *Session) GetUserBySession() (user User, err error) {
 	user = User{}
 
