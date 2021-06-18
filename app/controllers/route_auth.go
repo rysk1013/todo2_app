@@ -47,7 +47,6 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	user, err := models.GetUserByEmail(r.PostFormValue("email"))
 	if err != nil {
-		log.Fatalln(err)
 		http.Redirect(w, r, "/login", 302)
 	}
 
