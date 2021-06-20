@@ -147,6 +147,7 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 		valid = false
 		return
 	}
+	
 	if sess.ID != 0 {
 		valid = true
 	}
@@ -162,6 +163,7 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	return err 
 }
 
