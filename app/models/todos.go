@@ -30,6 +30,7 @@ func GetTodo(id int) (todo Todo, err error) {
 	cmd := `SELECT id, content, user_id, created_at
 					FROM todos
 					WHERE id = ?`
+
 	todo = Todo{}
 
 	err = Db.QueryRow(cmd, id).Scan(
@@ -38,6 +39,7 @@ func GetTodo(id int) (todo Todo, err error) {
 		&todo.UserID,
 		&todo.CreatedAt,
 	)
+
 	return todo, err
 }
 
@@ -52,6 +54,7 @@ func GetTodos() (todos []Todo, err error) {
 	
 	for rows.Next() {
 		var todo Todo
+
 		err = rows.Scan(
 			&todo.ID,
 			&todo.Content,
@@ -60,9 +63,12 @@ func GetTodos() (todos []Todo, err error) {
 		if err != nil {
 			log.Fatalln(err)
 		}
+
 		todos = append(todos, todo)
 	}
+
 	rows.Close()
+
 	return todos, err
 }
 
@@ -91,7 +97,9 @@ func (u *User) GetTodosByUser() (todos []Todo, err error) {
 
 		todos = append(todos, todo)
 	}
+
 	rows.Close()
+
 	return todos, err
 }
 
@@ -99,20 +107,24 @@ func (t *Todo) UpdateTodo() error {
 	cmd := `UPDATE todos 
 					SET content = ?, user_id = ?
 					WHERE id = ?`
+	
 	_, err = Db.Exec(cmd, t.Content, t.UserID, t.ID)
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	return err
 }
 
 func (t *Todo) DeleteTodo() (error) {
 	cmd := `DELETE FROM todos
 					WHERE id = ?`
+
 	_, err = Db.Exec(cmd, t.ID)
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	return err
 }
 
