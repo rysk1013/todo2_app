@@ -24,7 +24,8 @@ type Session struct {
 }
 
 func (u *User) CreateUser() (err error) {
-	cmd := `INSERT INTO users (uuid, name, email, password, created_at) 						VALUES (?, ?, ?, ?, ?)`
+	cmd := `INSERT INTO users (uuid, name, email, password, created_at) 
+					VALUES (?, ?, ?, ?, ?)`
 
 	_, err = Db.Exec(cmd,
 		createUUID(),
