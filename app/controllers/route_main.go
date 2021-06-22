@@ -27,7 +27,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 		todos, _ := user.GetTodosByUser()
 		user.Todos = todos
-		
+
 		generateHTML(w, user, "layout", "private_navbar", "index")
 	}
 }
@@ -130,6 +130,27 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 		}
 
 		http.Redirect(w, r, "/todos", 302)
+	}
+}
+
+func todoShow(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		todo, err := models.GetTodo(id)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		u, err := sess.GetUserBySession()
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		todo.UserName = u.Name
+
+		generateHTML(w, todo, "layout", "private_navbar", "todo_show")
 	}
 }
 
