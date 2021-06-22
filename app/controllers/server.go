@@ -31,7 +31,7 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 }
 
 // Get ID from URL(todos)
-var validPath = regexp.MustCompile("^/todos/(edit|update|delete)/([0-9]+)")
+var validPath = regexp.MustCompile("^/todos/(edit|update|delete|show)/([0-9]+)")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func (w http.ResponseWriter, r *http.Request)  {
@@ -89,6 +89,7 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
+	http.HandleFunc("/todos/show/", parseURL(todoShow))
 	http.HandleFunc("/users/edit/", parseURL2(userEdit))
 	http.HandleFunc("/users/update/", parseURL2(userUpdate))
 	http.HandleFunc("/users/delete/", parseURL2(userDelete))
