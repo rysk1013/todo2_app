@@ -10,6 +10,7 @@ type Todo struct {
 	Content   string
 	UserID    int
 	CreatedAt time.Time
+	UserName  string
 }
 
 func (u *User) CreateTodo(content string) (err error) {
