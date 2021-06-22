@@ -1,0 +1,10 @@
+{{define "content"}}
+
+[<a href="/todos/edit/{{.ID}}">Edit</a>]
+[<a href="/todos/delete/{{.ID}}">Delete</a>]
+<h1>{{.Content}}</h1>
+<p>{{.CreatedAt}}</p>
+<p>Created By {{.UserName}}</p>
+
+
+{{end}}
