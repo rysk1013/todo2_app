@@ -197,3 +197,21 @@ func (sess *Session) GetUserBySession() (user User, err error) {
 	)
 	return user, err
 }
+
+func (t *Todo) GetUserByTodo() (user User, err error) {
+	user = User{}
+
+	cmd := `SELECT id, uuid, name, email, created_at
+					FROM users
+					WHERE id = ?`
+	
+	err = Db.QueryRow(cmd, t.UserID).Scan(
+		&user.ID,
+		&user.UUID,
+		&user.Name,
+		&user.Email,
+		&user.CreatedAt,
+	)
+
+	return user, err
+}
