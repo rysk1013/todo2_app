@@ -134,7 +134,7 @@ func todoDelete(w http.ResponseWriter, r *http.Request, id int) {
 }
 
 func todoShow(w http.ResponseWriter, r *http.Request, id int) {
-	sess, err := session(w, r)
+	_, err := session(w, r)
 	if err != nil {
 		http.Redirect(w, r, "/login", 302)
 	} else {
@@ -143,7 +143,7 @@ func todoShow(w http.ResponseWriter, r *http.Request, id int) {
 			log.Fatalln(err)
 		}
 
-		u, err := sess.GetUserBySession()
+		u, err := todo.GetUserByTodo()
 		if err != nil {
 			log.Fatalln(err)
 		}
